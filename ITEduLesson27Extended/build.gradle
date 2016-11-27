@@ -1,0 +1,22 @@
+group 'ITEduLesson27Extended'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '6.9.13.6'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.0.1'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+
+}
+task testDemo(type : Test){
+    useTestNG(){
+        suites 'src\\test\\resources\\testRunner.xml'
+    }
+}
